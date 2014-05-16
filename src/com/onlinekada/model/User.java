@@ -1,3 +1,4 @@
+package com.onlinekada.model;
 // default package
 // Generated 16 May, 2014 1:31:57 AM by Hibernate Tools 3.4.0.CR1
 

@@ -10,6 +10,8 @@ import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
 
+import com.onlinekada.model.UserPrivilage;
+
 /**
  * Home object for domain model class UserPrivilage.
  * @see .UserPrivilage

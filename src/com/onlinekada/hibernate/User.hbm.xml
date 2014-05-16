@@ -3,12 +3,12 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 16 May, 2014 1:31:58 AM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="User" table="user" catalog="onlineKada">
+    <class name="com.onlinekada.model.User" table="user" catalog="onlineKada">
         <id name="userId" type="int">
             <column name="user_id" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="userPrivilage" class="UserPrivilage" fetch="select">
+        <many-to-one name="userPrivilage" class="com.onlinekada.model.UserPrivilage" fetch="select">
             <column name="privilage" />
         </many-to-one>
         <property name="userName" type="string">

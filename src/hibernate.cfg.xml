@@ -10,5 +10,10 @@
 		<property name="hibernate.connection.password">root</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		<property name="hibernate.default_schema">onlineKada</property>
+		
+		<mapping resource="com/onlinekada/hibernate/User.hbm.xml"/>
+		<mapping resource="com/onlinekada/hibernate/UserPrivilage.hbm.xml" />
+
 	</session-factory>
+	
 </hibernate-configuration>

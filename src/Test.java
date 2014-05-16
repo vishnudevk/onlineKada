@@ -6,11 +6,8 @@ public class Test {
 
 	public static void main(String[] args) {
 
-		 SessionFactory factory = new Configuration().configure().buildSessionFactory();
-		
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 		System.out.println(factory.isClosed());
-		
-		
 	}
 
 }

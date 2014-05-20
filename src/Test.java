@@ -1,3 +1,4 @@
+import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -5,9 +6,10 @@ import org.hibernate.cfg.Configuration;
 public class Test {
 
 	public static void main(String[] args) {
-
+		Logger logger = Logger.getLogger(Test.class);
+		
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
-		System.out.println(factory.isClosed());
+		logger.debug(factory.isClosed());
 	}
 
 }

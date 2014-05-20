@@ -1,11 +1,12 @@
 // default package
-// Generated 16 May, 2014 1:24:27 AM by Hibernate Tools 3.4.0.CR1
+// Generated 17 May, 2014 7:46:31 PM by Hibernate Tools 3.4.0.CR1
 
 import java.util.List;
 
 import javax.naming.InitialContext;
 
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
@@ -19,7 +20,7 @@ import com.onlinekada.model.UserPrivilage;
  */
 public class UserPrivilageHome {
 
-	private static final Logger log = Logger.getLogger(UserPrivilageHome.class);
+	private static final Log log = LogFactory.getLog(UserPrivilageHome.class);
 
 	private final SessionFactory sessionFactory = getSessionFactory();
 

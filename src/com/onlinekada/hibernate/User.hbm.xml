@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 16 May, 2014 1:31:58 AM by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 17 May, 2014 7:46:31 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="com.onlinekada.model.User" table="user" catalog="onlineKada">
-        <id name="userId" type="int">
-            <column name="user_id" />
+        <id name="userName" type="string">
+            <column name="user_name" length="45" />
             <generator class="assigned" />
         </id>
         <many-to-one name="userPrivilage" class="com.onlinekada.model.UserPrivilage" fetch="select">
             <column name="privilage" />
         </many-to-one>
-        <property name="userName" type="string">
-            <column name="user_name" length="45" not-null="true" unique="true" />
+        <property name="userId" type="int">
+            <column name="user_id" not-null="true" unique="true" />
         </property>
         <property name="password" type="string">
             <column name="password" length="45" />

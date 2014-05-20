@@ -6,11 +6,13 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.hibernate.LockMode;
 import org.hibernate.criterion.Example;
+import org.springframework.stereotype.Repository;
 
 import com.onlinekada.dao.GenericDao;
 import com.onlinekada.dao.MasterDao;
 import com.onlinekada.model.MasterModel;
 
+@Repository
 public class GenericDaoImpl<model extends MasterModel> extends MasterDao implements GenericDao<model> {
 
 	private Logger logger = Logger.getLogger(GenericDaoImpl.class);

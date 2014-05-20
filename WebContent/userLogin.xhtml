@@ -15,10 +15,10 @@
     	<h:form id="iceForm">
     		<h:panelGrid columns="2">
     			<h:outputText value="User Name"/>
-				<h:inputText label="username" value="#{userLogin.user.userName}" />
+				<h:inputText label="username" value="#{userLoginBean.user.userName}" />
 				<h:outputText value="Password"/>
-				<h:inputSecret  label="password" value="#{userLogin.user.password}"/>
-				<ice:commandButton value="Sign In" immediate="false" actionListener="#{userLogin.login}"/>
+				<h:inputSecret  label="password" value="#{userLoginBean.user.password}"/>
+				<ice:commandButton value="Sign In" immediate="false" actionListener="#{userLoginBean.login}"/>
 				<ice:commandButton value="Cancel" immediate="true" onclick="window.close();"/>
     		</h:panelGrid>
     	</h:form>

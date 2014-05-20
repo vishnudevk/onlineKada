@@ -12,7 +12,7 @@ public class MasterBean {
 	
 	public void init(){
 		logger.debug("1.init");
-		UserLogin userLogin = (UserLogin) FacesContext.getCurrentInstance().
+		UserLoginBean userLogin = (UserLoginBean) FacesContext.getCurrentInstance().
 				getExternalContext().getSessionMap().get("userLogin");
 		if(userLogin==null){
 		    try {

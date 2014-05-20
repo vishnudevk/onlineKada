@@ -1,24 +1,34 @@
 package com.onlinekada.bean;
 
+import java.io.Serializable;
+
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
-import javax.faces.event.ActionEvent;
+import javax.faces.context.FacesContext;
+
+import org.icefaces.util.JavaScriptRunner;
 
 import com.onlinekada.bo.UserLoginBo;
 import com.onlinekada.model.User;
 
-@ManagedBean(name="userLogin")
+@ManagedBean(name="userLoginBean")
 @ViewScoped
-public class UserLogin extends MasterBean {
+public class UserLoginBean extends MasterBean implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 
 	@PostConstruct
 	public void init(){
 		//overrride the method from the masterbean
 	}
 	
-	@ManagedProperty(name="userLoginBo", value = "#{userLoginBo}")
+	@ManagedProperty(value = "#{userLoginBo}")
 	private UserLoginBo userLoginBo;
 	
 	
@@ -29,7 +39,12 @@ public class UserLogin extends MasterBean {
 	 */
 	public void login(){
 		logger.debug("1.login");
-		logger.debug(userLoginBo);
+		user = userLoginBo.login(user);
+		if(user==null){
+			JavaScriptRunner.runScript(FacesContext.getCurrentInstance(), "alert('user login failed');");
+		}else{
+			JavaScriptRunner.runScript(FacesContext.getCurrentInstance(), "alert('sucessfully loged in as "+user.getName()+"');");
+		}
 		logger.debug("2.login");
 	}
 	

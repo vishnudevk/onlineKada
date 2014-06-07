@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 17 May, 2014 7:46:31 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.onlinekada.model.UserPrivilage" table="user_privilage" catalog="onlineKada">
+    <class name="com.onlinekada.model.UserPrivilage" table="user_privilage" >
         <id name="privilageId" type="int">
             <column name="privilage_id" />
             <generator class="assigned" />
@@ -24,7 +24,7 @@
             <key>
                 <column name="privilage" />
             </key>
-            <one-to-many class="com.onlinekada.model.User" />
+            <one-to-many class="com.onlinekada.model.KadaUser" />
         </set>
     </class>
 </hibernate-mapping>

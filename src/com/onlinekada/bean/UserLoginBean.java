@@ -11,7 +11,7 @@ import javax.faces.context.FacesContext;
 import org.icefaces.util.JavaScriptRunner;
 
 import com.onlinekada.bo.UserLoginBo;
-import com.onlinekada.model.User;
+import com.onlinekada.model.KadaUser;
 
 @ManagedBean(name="userLoginBean")
 @ViewScoped
@@ -32,7 +32,7 @@ public class UserLoginBean extends MasterBean implements Serializable{
 	private UserLoginBo userLoginBo;
 	
 	
-	private User user = new User();
+	private KadaUser user = new KadaUser();
 
 	
 	/**This method is getting called on the sign in button
@@ -48,37 +48,19 @@ public class UserLoginBean extends MasterBean implements Serializable{
 		logger.debug("2.login");
 	}
 	
-	
-	
-	
-	
-	
-	
 	/****************************Getter Setter******************************/
 	
-	public User getUser() {
+	public KadaUser getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(KadaUser user) {
 		this.user = user;
 	}
-
-
-
-
-
-
 
 	public UserLoginBo getUserLoginBo() {
 		return userLoginBo;
 	}
-
-
-
-
-
-
 
 	public void setUserLoginBo(UserLoginBo userLoginBo) {
 		this.userLoginBo = userLoginBo;

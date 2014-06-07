@@ -7,13 +7,15 @@ import org.apache.log4j.Logger;
 import org.hibernate.LockMode;
 import org.hibernate.criterion.Example;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.onlinekada.dao.GenericDao;
 import com.onlinekada.dao.MasterDao;
 import com.onlinekada.model.MasterModel;
 
 @Repository
-public class GenericDaoImpl<model extends MasterModel> extends MasterDao implements GenericDao<model> {
+@Transactional
+public abstract class GenericDaoImpl<model extends MasterModel> extends MasterDao implements GenericDao<model> {
 
 	private Logger logger = Logger.getLogger(GenericDaoImpl.class);
 
@@ -91,7 +93,8 @@ public class GenericDaoImpl<model extends MasterModel> extends MasterDao impleme
 			throw re;
 		}
 	}
-
+	
+	@Transactional
 	public List<model> findByExample(model instance) {
 		logger.debug("finding model instance by example");
 		try {

@@ -1,7 +1,7 @@
 import java.util.List;
 
 import com.onlinekada.model.MasterModel;
-import com.onlinekada.model.User;
+import com.onlinekada.model.KadaUser;
 
 public interface MasterDao <Model extends MasterModel> {
 

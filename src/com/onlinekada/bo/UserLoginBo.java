@@ -1,6 +1,6 @@
 package com.onlinekada.bo;
 
-import com.onlinekada.model.User;
+import com.onlinekada.model.KadaUser;
 
 /**
  * @author vishnudev
@@ -8,6 +8,6 @@ import com.onlinekada.model.User;
  */
 public interface UserLoginBo {
 
-	public User login(User userLogin);
+	public KadaUser login(KadaUser userLogin);
  	
 }

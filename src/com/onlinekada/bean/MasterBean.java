@@ -10,6 +10,12 @@ import com.onlinekada.jsf.components.ConfirmBox;
 import com.onlinekada.jsf.components.MsgBox;
 import com.onlinekada.model.KadaUser;
 
+/**All the beans should extend this bean
+ * It will have the basic logic for managing the user login/privilage
+ * and managing the methods for showing the message box and the confirmation dialoges
+ * @author vishnudev
+ *
+ */
 public class MasterBean {
 
 	private static final Logger logger = Logger.getLogger(MasterBean.class);

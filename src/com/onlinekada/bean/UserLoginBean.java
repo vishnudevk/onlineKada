@@ -8,6 +8,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 
+import org.apache.log4j.Logger;
 import org.icefaces.util.JavaScriptRunner;
 
 import com.onlinekada.bo.UserLoginBo;
@@ -21,7 +22,7 @@ public class UserLoginBean extends MasterBean implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	private static final Logger logger = Logger.getLogger(UserLoginBean.class);
 
 	@PostConstruct
 	public void init(){

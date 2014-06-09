@@ -7,20 +7,8 @@
     xmlns:icecore="http://www.icefaces.org/icefaces/core"
         xmlns:ace="http://www.icefaces.org/icefaces/components"
         xmlns:ice="http://www.icesoft.com/icefaces/component">
-    <h:head>
-        <title>ICEfaces 3</title>
-        <ice:outputStyle href="./xmlhttp/css/rime/rime.css" />
-    </h:head>
-    <h:body>
-       <h:form id="iceForm">
-        <ace:panel header="Welcome to ICEfaces">
-      <h:panelGrid columns="1">
-        <ace:linkButton id="linkButton1" value="ICEfaces Overview" href="http://wiki.icesoft.org/display/ICE/ICEfaces+Overview"></ace:linkButton>
-        <ace:linkButton id="linkButton2" value="General Documentation" href="http://wiki.icesoft.org/display/ICE/ICEfaces+Documentation"></ace:linkButton>
-        <ace:linkButton id="linkButton4" value="Tutorials" href="http://www.icesoft.org/community/tutorials-samples.jsf"></ace:linkButton>
-        <ace:linkButton id="linkButton5" value="ACE components" href="http://wiki.icesoft.org/display/ICE/ACE+Components"></ace:linkButton>
-     </h:panelGrid>
-    </ace:panel>
-       </h:form>
-    </h:body>
+        
+    <ui:composition>    
+    	<ice:outputText value="footer will come here"/>
+	</ui:composition>
 </html>

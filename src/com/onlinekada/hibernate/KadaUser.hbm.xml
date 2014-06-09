@@ -8,7 +8,7 @@
             <column name="user_name" length="45" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="userPrivilage" class="com.onlinekada.model.UserPrivilage" fetch="select">
+        <many-to-one name="userPrivilage" class="com.onlinekada.model.UserPrivilage" fetch="select" lazy="false">
             <column name="privilage" />
         </many-to-one>
         <property name="userId" type="int">

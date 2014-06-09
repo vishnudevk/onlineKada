@@ -7,20 +7,19 @@
     xmlns:icecore="http://www.icefaces.org/icefaces/core"
         xmlns:ace="http://www.icefaces.org/icefaces/components"
         xmlns:ice="http://www.icesoft.com/icefaces/component">
-    <h:head>
-        <title>Login</title>
-        <ice:outputStyle href="./xmlhttp/css/rime/rime.css" />
-    </h:head>
-    <h:body>
-    	<h:form id="iceForm">
-    		<h:panelGrid columns="2">
-    			<h:outputText value="User Name"/>
-				<h:inputText label="username" value="#{userLoginBean.user.userName}" />
-				<h:outputText value="Password"/>
-				<h:inputSecret  label="password" value="#{userLoginBean.user.password}"/>
-				<ice:commandButton value="Sign In" immediate="false" actionListener="#{userLoginBean.login}"/>
-				<ice:commandButton value="Cancel" immediate="true" onclick="window.close();"/>
-    		</h:panelGrid>
-    	</h:form>
-    </h:body>
+   
+   <ui:composition template="templates/userContent.xhtml">
+   		<ui:define name="content">
+	    	<h:form id="iceForm">
+	    		<h:panelGrid columns="2">
+	    			<h:outputText value="User Name"/>
+					<h:inputText label="username" value="#{userLoginBean.user.userName}" />
+					<h:outputText value="Password"/>
+					<h:inputSecret  label="password" value="#{userLoginBean.user.password}"/>
+					<ice:commandButton value="Sign In" immediate="false" actionListener="#{userLoginBean.login}"/>
+					<ice:commandButton value="Cancel" immediate="true" onclick="window.close();"/>
+	    		</h:panelGrid>
+	    	</h:form>
+    	</ui:define>
+   </ui:composition>
 </html>

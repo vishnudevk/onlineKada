@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:icecore="http://www.icefaces.org/icefaces/core"
+	xmlns:ace="http://www.icefaces.org/icefaces/components"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+<body>
+	<ui:composition>
+		<h:form>
+			<ace:dialog header="RunTime Exception" widgetVar="exceptionDialoge" modal="true" closable="false">
+				<h:panelGrid columns="1" width="100%">
+								<ice:outputText value="Runtime Exception occured - Contact Help Desk." />
+								<ice:outputText value="Error details : #{flash.keep.errorDetails}" />
+				</h:panelGrid>
+				<h:panelGrid width="100%" columns="2" style="text-align: center;">
+				<ice:commandButton  immediate="true" value="Send" onclick="window.location.href='#{flash.keep.mailToUrl}';return false;" />
+				<ice:commandButton  immediate="true" value="Close"  onclick="exceptionDialoge.hide();window.location.reload();"/>
+				</h:panelGrid>
+			</ace:dialog>
+		</h:form>
+	</ui:composition>
+</body>
+</html>

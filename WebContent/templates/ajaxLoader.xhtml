@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:icecore="http://www.icefaces.org/icefaces/core"
+	xmlns:ace="http://www.icefaces.org/icefaces/components"
+	xmlns:ice="http://www.icesoft.com/icefaces/component">
+<body>
+	<ui:composition>
+		<!-- style="border-width:1px; border-color:black; border-style:solid;" -->
+	<script>
+		//used for ajax loading progress bar to get displayed
+	   	 jsf.ajax.addOnEvent(function(data) {
+        var ajaxstatus = data.status; // Can be "begin", "complete" and "success"
+        var ajaxloader = document.getElementById("ajaxloader");
+
+        switch (ajaxstatus) {
+            case "begin": // This is called right before ajax request is been sent.
+                setTimeout(function(){ajaxloader.style.display = 'block';}, 1000);//display the loader only when the process time is morethan 800ms
+                /* ajaxloader.style.display = 'block'; */
+                break;
+
+            case "complete": // This is called right after ajax response is received.
+                ajaxloader.style.display = 'none';
+                setTimeout(function(){ajaxloader.style.display = 'none';}, 1000);
+                break;
+
+            case "success": // This is called when ajax response is successfully processed.
+                // NOOP.
+                break;
+       		 }
+   		 });
+	</script>
+
+<img id="ajaxloader" src="./../resources/images/ajaxloader.gif" style=" 
+	position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -32px;
+    margin-top: -32px; 
+    z-index: 99999999999;
+	display: none;" />
+	</ui:composition>
+</body>
+</html>
